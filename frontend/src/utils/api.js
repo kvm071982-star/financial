@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api',
+  // Use the local proxy in development, but use the Render backend URL in production
+  baseURL: import.meta.env.PROD ? 'https://financial-hce1.onrender.com/api' : '/api',
   timeout: 30000,
 });
 
