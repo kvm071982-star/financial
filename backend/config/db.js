@@ -21,7 +21,7 @@ const testConnection = async () => {
     connection.release();
   } catch (err) {
     console.error('❌ MySQL connection failed:', err.message);
-    process.exit(1);
+    console.warn('⚠️ Server is running but database is not connected. Please check your environment variables.');
   }
 };
 
