@@ -34,6 +34,11 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Bank Analysis API is running', timestamp: new Date() });
 });
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('Welcome to the FinAnalyzer API! The server is up and running.');
+});
+
 // 404 handler
 app.use('*', (req, res) => {
   res.status(404).json({ success: false, message: `Route ${req.originalUrl} not found` });
